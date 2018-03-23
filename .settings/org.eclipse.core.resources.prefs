@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/Download/DownPDF.java=UTF-8
+encoding//src/Download/DownPDF2_0.java=UTF-8
+encoding//src/check/CheckAllFile.java=UTF-8
+encoding//src/check/ClearFilePathData.java=UTF-8
+encoding//src/check/DeleteErrorFiles.java=UTF-8
+encoding//src/check/DeleteFileUtil.java=UTF-8
+encoding//src/edu/zut/FetchInform.java=UTF-8
+encoding//src/edu/zut/login.java=UTF-8
+encoding//src/utils/DbUtil.java=UTF-8
+encoding//src/utils/ReadConfig.java=UTF-8
+encoding/<project>=UTF-8
