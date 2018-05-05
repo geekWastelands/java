@@ -85,12 +85,12 @@ public class XinXiang {
 					String txt=doc2.select("div.artview_content").text();
 					String doc=doc2.select("div.artview_content").html();
 					String date=doc2.select("span.pub_txt_span").text();
-					date=date.substring(date.indexOf('£º')+1);
+					date=date.substring(date.indexOf(' ')+1);//´ý¸Ä
 					System.out.println("txt = "+txt);
 					//System.out.println("html = "+doc);
 					System.out.println("date = "+date);
 					String source=doc2.select("span.aut_txt_span").text();
-					source=source.substring(source.indexOf("£º")+1);
+					source=source.substring(source.indexOf("ï¿½ï¿½")+1);
 					System.out.println("source = "+source);
 					Object parms[]={title,titleurl,date,txt,doc,source};
 					try {

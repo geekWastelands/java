@@ -48,7 +48,7 @@ public class TunChang {
 					}
 					if(doc1!=null)break;
 				}
-				if(doc1.select("body").text().startsWith("±§Ç¸"))
+				if(doc1.select("body").text().startsWith("ï¿½ï¿½Ç¸"))
 					break;
 				System.out.println(url);
 				//System.out.println(doc1);
@@ -80,9 +80,9 @@ public class TunChang {
 					System.out.println("txt = "+txt);
 					for(Element content:contents){
 						if(content==contents.get(5))continue;
-						String temp=content.text().substring(content.text().indexOf('£º')+1);
+						String temp=content.text().substring(content.text().indexOf('ï¼š')+1);
 						System.out.println(temp);
-						con.add(content.text().substring(content.text().indexOf('£º')+1));
+						con.add(content.text().substring(content.text().indexOf('ï¼š')+1));
 					}
 					Object parms[]=new Object[con.size()];
 					//parms[0]=doc2.toString();

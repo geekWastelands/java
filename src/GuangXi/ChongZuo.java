@@ -36,13 +36,13 @@ public class ChongZuo {
 				String Num=list.select(".indexnum").text();
 				String titleurl=list.select("a").attr("abs:href");
 				String title=list.select("a").text();
-				title=title.substring(title.indexOf("±ê¡¡¡¡Ìâ£º")+5, title.indexOf("·¢²¼»ú¹¹£º"));
+				title=title.substring(title.indexOf("ï¿½ê¡¡ï¿½ï¿½ï¿½â£º")+5, title.indexOf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"));
 				String date=list.select("i").text();
 				if(date.substring(0,4).compareTo("2015")<=0)continue;
 				String publication=list.select("a tbody tr td").eq(1).text();
-				publication=publication.substring(publication.indexOf('£º')+1);
+				publication=publication.substring(publication.indexOf('ï¼š')+1);
 				String wenhao=list.select("a tbody tr td").eq(2).text();
-				wenhao=wenhao.substring(wenhao.indexOf('£º')+1);
+				wenhao=wenhao.substring(wenhao.indexOf('ï¼š')+1);
 				System.out.println("num = "+Num);
 				System.out.println("title = "+title);
 				System.out.println("titleurl = "+titleurl);

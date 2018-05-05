@@ -25,8 +25,8 @@ public class GuiLin {
 		num.put("http://www.glwsjs.gov.cn/rsf/site/glwjw/gongshigonggao/index", 34);
 		for(Entry<String, Integer> entry : num.entrySet()){
 			int cnt=0;
-			System.out.println("µ±Ç°Ò³Ãæ = "+cnt);
-			//System.out.println("µØÖ· = "+url);
+			System.out.println("ï¿½ï¿½Ç°Ò³ï¿½ï¿½ = "+cnt);
+			//System.out.println("ï¿½ï¿½Ö· = "+url);
 			String url=null;
 			while (cnt<entry.getValue()) {
 				if (cnt==0) {
@@ -34,7 +34,7 @@ public class GuiLin {
 				} else {
 					url=entry.getKey()+"_"+cnt+".html";
 				}
-				System.out.println("µØÖ· = "+url);
+				System.out.println("ï¿½ï¿½Ö· = "+url);
 				cnt++;
 				Document doc1=null;
 				for(int j=0;j<10;j++){
@@ -68,7 +68,7 @@ public class GuiLin {
 							}
 							RandomAccessFile random=new RandomAccessFile(TXT, "rw");
 							long fileLength = random.length();  
-				            // ½«Ð´ÎÄ¼þÖ¸ÕëÒÆµ½ÎÄ¼þÎ²¡£  
+				            // ï¿½ï¿½Ð´ï¿½Ä¼ï¿½Ö¸ï¿½ï¿½ï¿½Æµï¿½ï¿½Ä¼ï¿½Î²ï¿½ï¿½  
 				            random.seek(fileLength);  
 				            random.writeUTF(titleurl+'\t'+e.getMessage()+'\n');  
 				            random.close();  
@@ -82,9 +82,9 @@ public class GuiLin {
 					String doc=doc2.select(".article").html();
 					String txt=doc2.select(".article").text();
 					String source=doc2.select(".article .page_date span").eq(0).text();
-					source=source.substring(source.indexOf('£º')+1);
+					source=source.substring(source.indexOf('ï¼š')+1);
 					String author=doc2.select(".article .page_date span").eq(1).text();
-					author=author.substring(author.indexOf('£º')+1);
+					author=author.substring(author.indexOf('ï¼š')+1);
 					//System.out.println("doc = "+doc);
 					//System.out.println("txt = "+txt);
 					System.out.println("source = "+source);

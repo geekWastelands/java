@@ -1,5 +1,4 @@
-package ZheJiang;
-
+package localRegulation;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,8 +11,8 @@ public class SqlHelper {
 			PreparedStatement ps=null;
 			ResultSet rs=null;
 			conn= (Connection) JdbcUtils.getConnection();
-			//String sql="insert into hangzhou(title,titleurl,date,txt,doc,authors,source) values(?,?,?,?,?,?,?)";
-			String sql="insert into 温州(title,titleurl,date,txt,html) values(?,?,?,?,?)";
+			//String sql="insert into zhengzhou(title,titleurl,date,txt,doc,source) values(?,?,?,?,?,?)";
+			String sql="insert into 贵州(地址,标题,日期,文号,正文,正文源码) values(?,?,?,?,?,?)";
 
 			try{
 				
@@ -36,5 +35,4 @@ public class SqlHelper {
 			}
 		}
 }
-
 

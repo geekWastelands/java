@@ -25,12 +25,12 @@ public class WuZhou {
 		num.put("http://wsj.wuzhou.gov.cn/channel/019002?pageNo=", 103);
 		for(Entry<String, Integer> entry : num.entrySet()){
 			int cnt=1;
-			System.out.println("µ±Ç°Ò³Ãæ = "+cnt);
-			//System.out.println("µØÖ· = "+url);
+			System.out.println("ï¿½ï¿½Ç°Ò³ï¿½ï¿½ = "+cnt);
+			//System.out.println("ï¿½ï¿½Ö· = "+url);
 			String url=null;
 			while (cnt<=entry.getValue()) {
 				url=entry.getKey()+cnt;
-				System.out.println("µØÖ· = "+url);
+				System.out.println("ï¿½ï¿½Ö· = "+url);
 				cnt++;
 				Document doc1=null;
 				for(int j=0;j<10;j++){
@@ -58,7 +58,7 @@ public class WuZhou {
 							String TXT="D:\\GuangXi\\wuzhou.txt";
 							RandomAccessFile random=new RandomAccessFile(TXT, "rw");
 							long fileLength = random.length();  
-				            // ½«Ð´ÎÄ¼þÖ¸ÕëÒÆµ½ÎÄ¼þÎ²¡£  
+				            // ï¿½ï¿½Ð´ï¿½Ä¼ï¿½Ö¸ï¿½ï¿½ï¿½Æµï¿½ï¿½Ä¼ï¿½Î²ï¿½ï¿½  
 				            random.seek(fileLength);  
 				            random.writeChars(title+'\t'+titleurl+'\t'+e.getMessage()+'\n');  
 				            random.close();  
@@ -75,15 +75,15 @@ public class WuZhou {
 					//System.out.println("doc = "+doc);
 					//System.out.println("txt = "+txt);
 					String date=doc2.select("div#time").text();
-					date=date.substring(date.indexOf('£º')+1);
+					date=date.substring(date.indexOf('ï¼š')+1);
 					System.out.println("date = "+date);
 					if(4<date.length()&&date.substring(0, 4).compareTo("2015")<=0)continue;
-					String source=doc2.select("div#source").text();//À´Ô´£ºÎàÖÝÊÐÎÀÉúºÍ¼Æ»®ÉúÓýÎ¯Ô±»á)
+					String source=doc2.select("div#source").text();//ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼Æ»ï¿½ï¿½ï¿½ï¿½ï¿½Î¯Ô±ï¿½ï¿½)
 					if(0==source.length())continue;
 		
-					source=source.substring(source.indexOf('£º')+1,source.indexOf(')'));
+					source=source.substring(source.indexOf('ï¼š')+1,source.indexOf(')'));
 					//String author=doc2.select(".article .page_date span").eq(1).text();
-					//author=author.substring(author.indexOf('£º')+1);
+					//author=author.substring(author.indexOf('ï¿½ï¿½')+1);
 					
 					System.out.println("source = "+source);
 					//System.out.println("author = "+author);

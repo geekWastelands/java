@@ -73,9 +73,9 @@ public class QiongHai {
 					Elements contents=doc2.select("tbody tr .a3D");
 					for(Element content:contents){
 						if(content==contents.get(5))continue;
-						String temp=content.text().substring(content.text().indexOf('£º')+1);
+						String temp=content.text().substring(content.text().indexOf('ï¼š')+1);
 						System.out.println(temp);
-						con.add(content.text().substring(content.text().indexOf('£º')+1));
+						con.add(content.text().substring(content.text().indexOf('ï¼š')+1));
 					}
 					Object parms[]=new Object[con.size()+1];
 					parms[0]=doc2.toString();

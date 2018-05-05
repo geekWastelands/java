@@ -84,7 +84,7 @@ public class tianjin {
 					String txt=doc2.select("table tbody tr td table tbody").eq(33).text();
 					String doc=doc2.select("tbody tbody").eq(33).html();
 					String date=doc2.select("div.time").text();
-					date=date.substring(date.indexOf('£º')+1);
+					date=date.substring(date.indexOf('ï¼š')+1);
 					System.out.println("txt = "+txt);
 					//System.out.println("html = "+doc);
 					System.out.println("date = "+date);

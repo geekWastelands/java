@@ -30,12 +30,12 @@ public class BeiHai {
 		for(Entry<String, Integer> entry : num.entrySet()){
 			int cnt=1;
 			
-			//System.out.println("µØÖ· = "+url);
+			//System.out.println("ï¿½ï¿½Ö· = "+url);
 			String url=null;
 			while (cnt<=entry.getValue()) {
-				System.out.println("µ±Ç°Ò³Ãæ = "+cnt);
+				System.out.println("ï¿½ï¿½Ç°Ò³ï¿½ï¿½ = "+cnt);
 				url=(String) entry.getKey().subSequence(0, entry.getKey().indexOf('&'))+cnt+entry.getKey().substring(entry.getKey().indexOf('&'));
-				System.out.println("µØÖ· = "+url);
+				System.out.println("ï¿½ï¿½Ö· = "+url);
 				cnt++;
 				Document doc1=null;
 				for(int j=0;j<10;j++){
@@ -63,7 +63,7 @@ public class BeiHai {
 							String TXT="D:\\GuangXi\\beihai.txt";
 							RandomAccessFile random=new RandomAccessFile(TXT, "rw");
 							long fileLength = random.length();  
-				            // ½«Ð´ÎÄ¼þÖ¸ÕëÒÆµ½ÎÄ¼þÎ²¡£  
+				            // ï¿½ï¿½Ð´ï¿½Ä¼ï¿½Ö¸ï¿½ï¿½ï¿½Æµï¿½ï¿½Ä¼ï¿½Î²ï¿½ï¿½  
 				            random.seek(fileLength);  
 				            random.writeUTF(titleurl+'\t'+e.getMessage()+'\n');  
 				            random.close();  
@@ -80,7 +80,7 @@ public class BeiHai {
 						String TXT="D:\\GuangXi\\beihai.txt";
 						RandomAccessFile random=new RandomAccessFile(TXT, "rw");
 						long fileLength = random.length();  
-			            // ½«Ð´ÎÄ¼þÖ¸ÕëÒÆµ½ÎÄ¼þÎ²¡£  
+			            // ï¿½ï¿½Ð´ï¿½Ä¼ï¿½Ö¸ï¿½ï¿½ï¿½Æµï¿½ï¿½Ä¼ï¿½Î²ï¿½ï¿½  
 			            random.seek(fileLength);  
 			            random.writeUTF(title+'\t'+titleurl+'\t'+e.getMessage()+'\n');  
 			            random.close();  
@@ -93,16 +93,16 @@ public class BeiHai {
 					//System.out.println("doc = "+doc);
 					//System.out.println("txt = "+txt);
 					String date=doc2.select("tbody").eq(10).select("tr").eq(1).text();
-					date=date.substring(date.indexOf("¼ä£º")+1);
+					date=date.substring(date.indexOf("ï¿½ä£º")+1);
 					System.out.println("date = "+date);
 					if(4<date.length()&&date.substring(0, 4).compareTo("2015")<=0)continue;
 					String source=doc2.select("tbody").eq(10).select("tr").eq(1).text();
-					source=(String) source.subSequence(source.indexOf("Ô´£º")+1, source.indexOf('£º'));//À´Ô´£ºÎàÖÝÊÐÎÀÉúºÍ¼Æ»®ÉúÓýÎ¯Ô±»á)
+					source=(String) source.subSequence(source.indexOf("Ô´ï¿½ï¿½")+1, source.indexOf('ï¼š'));//ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼Æ»ï¿½ï¿½ï¿½ï¿½ï¿½Î¯Ô±ï¿½ï¿½)
 					if(0==source.length())continue;
 		
-					source=source.substring(source.indexOf('£º')+1,source.indexOf(')'));
+					source=source.substring(source.indexOf('ï¼š')+1,source.indexOf(')'));
 					//String author=doc2.select(".article .page_date span").eq(1).text();
-					//author=author.substring(author.indexOf('£º')+1);
+					//author=author.substring(author.indexOf('ï¿½ï¿½')+1);
 					
 					System.out.println("source = "+source);
 					//System.out.println("author = "+author);

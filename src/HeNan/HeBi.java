@@ -89,13 +89,13 @@ public class HeBi {
 					String txt=doc2.select("div#maincontent").text();
 					String doc=doc2.select("div#maincontent").html();
 					String date=doc2.select("span#adddate").text();
-					date=date.substring(date.indexOf('£º')+1);
+					date=date.substring(date.indexOf(' ')+1);//´ý¸Ä
 					System.out.println("txt = "+txt);
 					//System.out.println("html = "+doc);
 					System.out.println("date = "+date);
 					/*String source=doc2.select(".text").first().text();
 					System.out.println("source = "+source);
-					source=source.substring(source.indexOf("£º")+1, source.indexOf("·¢"));*/
+					source=source.substring(source.indexOf("ï¿½ï¿½")+1, source.indexOf("ï¿½ï¿½"));*/
 					Object parms[]={title,titleurl,date,txt,doc};
 					try {
 						SqlHelper.insertInfo(parms);

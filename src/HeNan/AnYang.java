@@ -89,13 +89,13 @@ public class AnYang {
 					String txt=doc2.select("div.sx3").text();
 					String doc=doc2.select("div.sx3").html();
 					String date=doc2.select("div.date").text();
-					date=date.substring(date.indexOf('£º')+1, date.indexOf("µã")-3);
+					date=date.substring(date.indexOf('ï¼š')+1, date.indexOf("ï¿½ï¿½")-3);
 					System.out.println("txt = "+txt);
 					//System.out.println("html = "+doc);
 					System.out.println("date = "+date);
 					/*String source=doc2.select(".text").first().text();
 					System.out.println("source = "+source);
-					source=source.substring(source.indexOf("£º")+1, source.indexOf("·¢"));*/
+					source=source.substring(source.indexOf("ï¿½ï¿½")+1, source.indexOf("ï¿½ï¿½"));*/
 					Object parms[]={title,titleurl,date,txt,doc};
 					try {
 						SqlHelper.insertInfo(parms);
