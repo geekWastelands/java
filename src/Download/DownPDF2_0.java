@@ -228,7 +228,7 @@ public class DownPDF2_0 {
 	private synchronized static HashMap<String, Object> getTableRow() {
 		if (rows == null || rows.size() <= 0) {
 			String sqlString = "select download_url,id from " + tableName 
-					+ " where download_url like 'http%' and mark<" 
+					+ " where download_url like '%http%' and mark<" 
 					+ ReadConfig.mark1 + " " + ReadConfig.orderBy + " limit 1000";
 			rows = SQLHelper.selectBySQL(sqlString);
 			if (rows.size() <= 0) {
@@ -252,7 +252,9 @@ public class DownPDF2_0 {
 		for (;;) {
 			HashMap<String, Object> tableRow = getTableRow();
 			int id = Integer.parseInt(tableRow.get("id").toString());
-			downLoad(tableRow.get("download_url").toString(),id);
+			String download_url=tableRow.get("download_url").toString().split(", ")[1];
+			downLoad(download_url,id);
+			
 		}
 	}	
 	

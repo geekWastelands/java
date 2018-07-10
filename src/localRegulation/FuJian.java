@@ -43,12 +43,12 @@ public class FuJian {
 					for (String string : objects) {
 						System.out.println(string);
 					}
-					try {
+					/*try {
 						SqlHelper.insertInfo(objects);
 					} catch (SQLException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					}
+					}*/
 				}
 			}
 		}

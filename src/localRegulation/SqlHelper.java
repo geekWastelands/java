@@ -12,13 +12,13 @@ public class SqlHelper {
 			ResultSet rs=null;
 			conn= (Connection) JdbcUtils.getConnection();
 			//String sql="insert into zhengzhou(title,titleurl,date,txt,doc,source) values(?,?,?,?,?,?)";
-			String sql="insert into 贵州(地址,标题,日期,文号,正文,正文源码) values(?,?,?,?,?,?)";
+			String sql="insert into 福建(地址,标题,索引号,文号,日期,正文,正文源码,抓取日期) values(?,?,?,?,?,?,?,?)";
 
 			try{
 				
 				ps=(PreparedStatement) conn.prepareStatement(sql);
 				for(int t=0;t<obj.length;t++){
-					ps.setString(t+1, obj[t].toString());
+					ps.setString(t+1, obj[t].toString()); 
 				}
 /*				ps.setString(1,obj[0].toString());
 				ps.setString(2,obj[1].toString());

@@ -1,6 +1,8 @@
 package localRegulation;
 
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
@@ -22,6 +24,8 @@ public class GuiZhou {
 		urls.put("http://www.gzgov.gov.cn/xxgk/jbxxgk/fgwj/szfwj_8191/qfr_8195/index", 28);
 		urls.put("http://www.gzgov.gov.cn/xxgk/jbxxgk/fgwj/szfwj_8191/qfbf_8196/index", 68);
 		urls.put("http://www.gzgov.gov.cn/xxgk/jbxxgk/fgwj/szfwj_8191/qfbh_8197/index", 35);
+		urls.put("http://www.gzgov.gov.cn/xxgk/jbxxgk/fgwj/szfwj_8191/wjxgfzqk_8198/xgfzqk/index", 2);
+		urls.put("http://www.gzgov.gov.cn/xxgk/jbxxgk/fgwj/szfwj_8191/wjxgfzqk_8198/sxfzwj/index", 10);
 		for(Entry<String, Integer>entry:urls.entrySet()) {
 			String url=null;
 			for(int i=0;i<entry.getValue();i++) {
@@ -36,7 +40,6 @@ public class GuiZhou {
 					String date = list.select("span").text();
 					System.out.println("titleurl = "+titleurl);
 					System.out.println("date = "+date);
-					if(date.substring(0, 4).compareTo("2016")<0)continue;
 					Document doc2 = GetConnect.connect(titleurl);
 					String title = doc2.select(".Article_bt h1").text();
 					System.out.println("title = "+title);
@@ -64,8 +67,10 @@ public class GuiZhou {
 					String content=doc2.select("div.zw-con").text();
 					String content_html=doc2.select("div.zw-con").html();
 					System.out.println("content = "+content);
-					
-					Object[] parms= {titleurl,title,date,wenhao,content,content_html};
+					Date dNow = new Date( );
+				    SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
+					System.out.println("fetch_date = "+ft.format(dNow));
+					Object[] parms= {titleurl,title,date,wenhao,content,content_html,ft.format(dNow)};
 					try {
 						SqlHelper.insertInfo(parms);
 					} catch (SQLException e) {

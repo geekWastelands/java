@@ -31,12 +31,12 @@ public class DbUtil {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			// DBCP鐨勮繛鎺ユ睜宸ュ巶
-			// 閫氳繃杩欎釜宸ュ巶锛屾垜浠幏寰椾竴涓牴鎹祫婧愭枃浠堕厤缃殑鏁版嵁搴撹繛鎺ユ睜
+			
 			dataSource = BasicDataSourceFactory.createDataSource(prop);  //使用工厂生成一个实例
 			System.out.println("使用工厂生成一个实例");
 		} catch (Exception e) {
-			throw new Error("鏁版嵁搴撹繛鎺ュけ璐�");
+			//throw new Error("鏁版嵁搴撹繛鎺ュけ璐�");
+			System.out.println(e.getMessage());
 		}
 	}
 
