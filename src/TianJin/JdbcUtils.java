@@ -9,11 +9,11 @@ import java.sql.Statement;
 
 
 public final class JdbcUtils {
-	private static String url = "jdbc:mysql://localhost/tianjin";
+	private static String url = "jdbc:mysql://localhost/tianjin";//数据库地址
 	private static String user = "root";
 	private static String password = "root";
 
-
+	//注册驱动
 	static {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -21,14 +21,12 @@ public final class JdbcUtils {
 			throw new ExceptionInInitializerError(e);
 		}
 	}
-
+	//创建连接
 	public static Connection getConnection() throws SQLException {
-		//�������ݿ�����
 		return DriverManager.getConnection(url, user, password);
 	}
-
+	//释放资源
 	public static void free(ResultSet rs, Statement st, Connection conn) {
-		 //�ͷ�����
 		try {
 			if (rs != null)
 				rs.close();
